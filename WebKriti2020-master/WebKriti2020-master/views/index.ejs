@@ -1,0 +1,93 @@
+    <div class="preloader">
+        <h1>旅行是艺术</h1>
+        <p>.xylo</p>
+        <br>
+        <div class="spinner"></div>
+    </div>
+    <div id="landing" class="landing">
+        <div class="navbar">
+            <h2 id="xylo">.xylo</h2>
+            <h2 id="travelblog">TRAVEL   BLOG</h2>
+            <div>
+                <p>
+                    <a class="buttons" href="./about">about</a>
+                    <a class="buttons" href="#">forum</a>
+                    <a class="buttons" href="./login">login</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="landing-text">            
+            <p class="landing-text-anim">
+                The woods are lovely, dark and deep<br>
+                But I have promises to keep<br>
+                And miles to go before I sleep<br>
+                And miles to go before I sleep.<br>
+            </p>
+            <a class="button landing-text-anim" href="#">Discover</a>
+        </div>
+    </div>
+    <section class="introduction">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla earum porro fugit provident ullam delectus sed est autem nemo quam, excepturi dolorem nobis iusto laudantium placeat! Perferendis autem atque culpa placeat laboriosam modi sit amet nam reprehenderit. Doloremque quasi numquam odio autem saepe, vel fugiat? Laborum cumque mollitia est corrupti dignissimos deserunt deleniti velit, alias numquam eaque quisquam? Veniam ut accusamus non dolorem aliquid iste. Temporibus rem velit, possimus sequi vitae repudiandae tempore delectus ab repellat quam labore, quo minus iusto voluptate expedita quisquam! Ab, deserunt facere! Magnam voluptas, veritatis sequi hic ut culpa quidem, nihil, aliquid veniam asperiores expedita!
+        </div>
+    </section>
+
+    <div id="stories" class="stories">
+        <div id="mystories" class="heading">
+            <h2>My Stories</h2>
+        </div>
+        <div id="pinnedelement1" class="flex-container">
+            <div class="card">Hi I am Molybdenum</div>
+            <div class="card">Hi I am Molybdenum</div>
+            <div class="card">Hi I am Molybdenum</div>
+        </div>
+    </div>
+
+     <!-- The social media icon bar -->
+     <div class="icon-bar">
+        <a id="socialmedia" href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a id="socialmedia" href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a id="socialmedia" href="#" class="google"><i class="fa fa-google"></i></a>
+        <a id="socialmedia" href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a id="socialmedia" href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+    </div>
+
+    <div class="locations">
+        <a id="japan" href="#" onmouseover="handleCity('../assets/japan.jpg')">Japan</a>
+        <a id="norway" href="#" onmouseover="handleCity('../assets/norway.jpg')">Norway</a>
+        <a id="beijing" href="#" onmouseover="handleCity('../assets/beijing.jpg')">Beijing</a>
+        <a id="australia" href="#" onmouseover="handleCity('../assets/retro.jpg')">Puerto</a>
+    </div>
+    
+    <script>
+
+        gsap.from(".landing-text-anim", {opacity: 0, duration: 1, y: -100 ,ease: Power1, stagger: 0.6,delay:2.1});
+        gsap.from("#socialmedia" ,{duration: 1, y:50 , delay:3.2, opacity:0,stagger: 0.2});
+        gsap.from(".locations" ,{duration: 1, y:50 , delay:3.2, opacity:0,stagger: 0.2});
+        gsap.from(".buttons", {opacity: 0,duration: 1, x: -100, ease: Power1, stagger: 0.2, delay: 2.1});
+        var action = gsap.timeline().from(".card", {opacity: 0, duration: 1,y: -100, ease: Power1, stagger: 0.4,delay: 0.6});
+
+        // scrollmagic
+        var controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+            triggerElement: ".stories",
+            triggerHook:2.5,
+            reverse: true,
+        }).setTween(action)
+        .addTo(controller);
+
+        const handleCity = (cityBackground)=>{
+            if(cityBackground == '../assets/beijing.jpg'){
+                document.querySelector('.landing-text-anim').style.color = 'white';
+                document.querySelector('.landing').style.backgroundImage = `url(${cityBackground})`;
+            }
+            else{
+                document.querySelector('.landing-text-anim').style.color = 'black';
+                document.querySelector('.landing').style.backgroundImage = `url(${cityBackground})`;
+            }
+            
+        }
+        
+    </script>

@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Aclonica|Baloo+Bhai|Lobster+Two|Markazi+Text|Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:700,900&display=swap&subset=chinese-traditional" rel="stylesheet');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #000000;
+}
+.preloader{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-family: 'Noto Serif TC',serif;
+    font-size: 48px;
+    transition: opacity 0.5s ease;
+}
+
+.preload-finish{
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner{
+    border: 4px solid #ffff00; /* Light grey */
+    border-top: 4px solid #000; /* Blue */
+    border-left: 4px solid #000;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.landing{
+    background-image: url(../assets/japan.jpg);
+    height: 100vh;
+    height: calc(var(--vh,1vh)*100);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: all 0.7s ease;
+}
+
+.landing > .navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px 0px 30px;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 25px;
+    color: #000 !important;
+}
+
+
+.buttons{
+    text-decoration: none;
+    padding: 20px 20px 0px 0px;
+    color: #000;
+    display: inline;
+    overflow: hidden;
+    position: relative;
+}
+
+.buttons:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    width: 0;
+    bottom: -1px;
+    background: #000;
+    height: 2px;
+    transition-property: width;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+  }
+  .buttons:hover:after,
+  .buttons:focus:after,
+  .buttons:active:after {
+    left: 0;
+    width: 74%;
+  }
+
+
+#travelblog{
+    margin-left: 13.75vw !important;
+}
+
+.landing-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+    text-align: center;
+    padding: 150px 200px;
+    font-family: 'Markazi Text', serif;
+}
+
+.landing-text p{
+    color: #000;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.landing-text .button{
+    font-size: 25px;
+    text-decoration: none;
+    color: #000;
+    border: #000 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.landing-text .button:hover{
+    color: #000;
+    background-color: #ffffff;
+}
+/* 
+.landing .navbar a:hover{
+    font-size: 27px;
+} */
+
+/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+.icon-bar {
+    position: absolute;
+    top: 40%;
+    right: 1%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+/* Style the icon bar links */
+.icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 16px;
+    border-radius: 50% !important;
+    transition: all 0.3s ease;
+    color: #000;
+    font-size: 20px;
+  }
+  
+  /* Style the social media icons with color, if you want */
+  .icon-bar a:hover {
+    color: #000;
+    background-color: #ffffff;
+  }
+  
+  .facebook:hover, .twitter:hover, .google:hover, .linkedin:hover, .youtube:hover {
+    color: white;
+  }
+
+@media only screen and (max-width: 635px){
+    .landing-text p{ 
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 635px )and (max-width: 1051px){
+    .landing-text .button{
+        color: #000;
+        background-color: #ffffff;
+    }
+}
+
+.introduction{
+    display: block;
+    box-sizing: border-box;
+    line-height: 1.6;
+    font-size: 20px;
+    padding: 20vh 20vw;
+    background-color: #000;
+    color: whitesmoke;
+}
+
+.stories{
+    background-image: url(../assets/seaside1.jpg);
+    height: 100vh;
+    /* height: calc(var(--vh,1vh)*100); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    font-family: 'Philosopher',sans-serif;
+    color: #79607d;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 90vh;
+}
+.card{
+    margin: 20px;
+    min-height: 400px;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.locations{
+    position: absolute;
+    top: 15%;
+    left: 1%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.locations{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    transform: rotate(-90deg);
+    min-height: 300px;
+    min-width: 300px;
+    margin-top: 5px;
+}
+
+.locations a{
+    text-decoration: none;
+    padding: 9px;
+    font-family: 'Markazi Text', serif;
+    color: #000;
+    font-size: 20px;
+    border-radius: 10%;
+    transition: 0.3s ease;
+}
+
+.locations a:hover{
+    background-color: #ffffff;
+    color: black;
+}
+
+.locations::before{
+    display: inline-block;
+    content: '';
+    border-top: 1px solid #000;
+    width: 65px;
+    transform: translateY(-5px);
+    margin: 0 10px 0 0;
+}
